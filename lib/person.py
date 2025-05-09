@@ -24,6 +24,8 @@ class Person:
     ]
 
     def __init__(self, name="Jane Doe", job="Admin"):
+        self._name = None
+        self._ = None
         self.name = name
         self.job = job
 
@@ -36,7 +38,7 @@ class Person:
         if isinstance(value, str) and 1 <= len(value) <= 25:
             self._name = value.title()
         else:
-            print("Name must be string between 1 and 25 characters.", flush=True)
+            print("Name must be string between 1 and 25 characters.")
 
     @property
     def job(self):

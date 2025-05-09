@@ -7,8 +7,11 @@ class Dog:
     ]
 
     def __init__(self, name="Fido", breed="Mutt"):
+        self._name = None
+        self._breed = None
         self.name = name
-        self.breed = breed
+        if self._name is not None:
+            self.breed = breed
 
     @property
     def name(self):
@@ -31,6 +34,3 @@ class Dog:
             self._breed = value
         else:
             print("Breed must be in list of approved breeds.")
-
-    def sit(self):
-        print("The dog is sitting.")
