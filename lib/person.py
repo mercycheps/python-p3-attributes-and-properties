@@ -15,8 +15,6 @@ APPROVED_JOBS = [
     "Purchasing"
 ]
 
-
-
 class Person:
     approved_jobs = [
         "Admin", "Customer Service", "Human Resources", "ITC",
@@ -25,8 +23,12 @@ class Person:
 
     def __init__(self, name="Jane Doe", job="Admin"):
         self._name = None
-        self._ = None
+        self._job = None
+
         self.name = name
+        if self._name is None:
+            return  # Exit early if name is invalid
+
         self.job = job
 
     @property
@@ -39,6 +41,7 @@ class Person:
             self._name = value.title()
         else:
             print("Name must be string between 1 and 25 characters.")
+            self._name = None  # Ensure it's explicitly invalid
 
     @property
     def job(self):
@@ -56,4 +59,5 @@ class Person:
 
     def walk(self):
         print("The person is walking.")
+
 
